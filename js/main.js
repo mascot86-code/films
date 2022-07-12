@@ -28,9 +28,11 @@ let personalMovieDB = {
   },
   writeYourGenres: function () {
     for (let i = 0; i < 3; i++) {
-      let genres = prompt(`Ваш любимый жанр под номером ${i + 1}`);
+      let genres = prompt(
+        `Ваш любимый жанр под номером ${i + 1}`,
+      ).toLocaleLowerCase();
       if (genres !== "" && genres !== null) {
-        this.genres.push(genres);
+        this.genres.push(genres).sort();
         console.log("Genres add");
       } else {
         console.log("Genres error");
@@ -43,9 +45,11 @@ let personalMovieDB = {
   },
   writeYourGenres2: function () {
     for (let i = 0; i < 1; i++) {
-      let genres = prompt(`Введите свои любимые жанры через запятую`);
+      let genres = prompt(
+        `Введите свои любимые жанры через запятую`,
+      ).toLocaleLowerCase();
       if (genres !== "" && genres !== null) {
-        this.genres = genres.split(", ");
+        this.genres = genres.split(", ").sort();
         console.log("Genres add");
       } else {
         console.log("Genres error");
